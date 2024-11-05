@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
 const cors = require('cors');
+const initializePassportJWT = require('./config/passport');
 require('dotenv').config();
 
 // Initialize Express
@@ -11,8 +12,6 @@ const app = express();
 // view engine setup
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
-// Passport Config
-require('./config/passport')(passport);
 
 // Middleware
 app.use(logger('dev'));
@@ -21,24 +20,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-  origin: '*',
+  origin: 'http://localhost:5173',  
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Initialize Passport
+// Initialize Passport with JWT strategy
+initializePassportJWT(passport);
+
+// Apply Passport middleware
 app.use(passport.initialize());
+
 
 // Routes
 const indexRouter = require('./routes/index');
 const authRoutes = require('./routes/auth');
-const protectedRoutes = require('./routes/protected');
-const profileRouter = require('./routes/profile');
+const usersRouter = require('./routes/users');
+const urlRoutes = require('./routes/url');
 
 app.use('/', indexRouter);
-app.use('/api/auth', authRoutes);
-app.use('/api/protected', protectedRoutes);
-app.use('/api/profile', profileRouter);
+app.use('/auth', authRoutes);
+app.use('/auth/user', usersRouter);
+app.use('/api', urlRoutes);
 
 // Error Handling
 app.use(function (req, res, next) {

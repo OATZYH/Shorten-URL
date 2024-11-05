@@ -1,104 +1,64 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
-// Register a new user
+// Generate JWT Token
+const generateToken = (user) => {
+  const payload = {
+    user_id: user.user_id,
+    username: user.username,
+    is_admin: user.is_admin,
+  };
+  const secret = process.env.JWT_SECRET || 'your_jwt_secret_key';
+  const options = {
+    expiresIn: '12h', 
+  };
+  return jwt.sign(payload, secret, options);
+};
+
+// Register 
 exports.register = async (req, res) => {
-    const { username, password, is_admin } = req.body;
-
-    // Basic validation
-    if (!username || !password) {
-        return res.status(400).json({ msg: 'Please enter all fields' });
-    }
-
-    try {
-        // Check if user already exists
-        const existingUser = await User.findByUsername(username);
-        if (existingUser) {
-            return res.status(400).json({ msg: 'User already exists' });
-        }
-
-        // Hash password
-        const saltRounds = 10;
-        const salt = await bcrypt.genSalt(saltRounds);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        // Create user
-        const newUser = await User.create(username, hashedPassword, is_admin || false);
-
-        // Generate JWT
-        const payload = {
-            id: newUser.user_id,
-            username: newUser.username,
-            is_admin: newUser.is_admin,
-        };
-
-        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-        res.status(201).json({
-            token: 'Bearer ' + token,
-            user: {
-                id: newUser.user_id,
-                username: newUser.username,
-                is_admin: newUser.is_admin,
-                created_at: newUser.created_at,
-            },
-        });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
-};
-
-// Compare two strings
-function compareStrings (string1, string2) {
-    return string1 === string2;
-};
-// Login user
-exports.login = async (req, res) => {
+  try {
     const { username, password } = req.body;
-    
-    // Basic validation
-    if (!username || !password) {
-        return res.status(400).json({ msg: 'Please enter all fields' });
+    const existingUser = await User.findByUsername(username);
+    if (existingUser) {
+      return res.status(400).json({ message: 'Username already taken' });
     }
-
-    try {
-        // Check for existing user
-        const user = await User.findByUsername(username);
-        if (!user) {
-            return res.status(400).json({ msg: 'User doesn not exist' });
-        }
-
-        // Validate password
-        // const isMatch = await bcrypt.compare(password, user.password);
-        const isMatch = compareStrings(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ msg: 'password incorrect' });
-        }
-
-        // Generate JWT
-        const payload = {
-            id: user.user_id,
-            username: user.username,
-            is_admin: user.is_admin,
-        };
-
-        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
-
-        res.json({
-            token: 'Bearer ' + token,
-            user: {
-                id: user.user_id,
-                username: user.username,
-                is_admin: user.is_admin,
-                created_at: user.created_at,
-            },
-        });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
+    const user = await User.create(username, password);
+    const token = generateToken(user);
+    res.status(201).json({ message: 'User registered successfully', token, user });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
+// Login
+exports.login = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findByUsername(username);
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
+    const token = generateToken(user);
+    res.json({ message: 'Logged in successfully', token, user });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+
+// Get Current User
+exports.getUser = async (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+  res.json({ user: req.user });
+};

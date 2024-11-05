@@ -1,53 +1,54 @@
 const pool = require('../config/db');
 
-const URL = {
-    createWithoutShortCode: async (long_url, user_id) => {
-        const query = `
-            INSERT INTO urls (long_url, user_id)
-            VALUES ($1, $2)
-            RETURNING url_id
-        `;
-        const values = [long_url, user_id];
-        const res = await pool.query(query, values);
-        return res.rows[0];
-    },
+class Url {
+  static async create(shortCode, longUrl, userId) {
+    const query = `
+      INSERT INTO urls (short_code, long_url, user_id)
+      VALUES ($1, $2, $3)
+      RETURNING url_id, short_code, long_url, user_id, click_count, created_at
+    `;
+    const values = [shortCode, longUrl, userId];
+    const res = await pool.query(query, values);
+    return res.rows[0];
+  }
 
-    updateShortCode: async (short_code, url_id) => {
-        const query = `
-            UPDATE urls
-            SET short_code = $1
-            WHERE url_id = $2
-            RETURNING *
-        `;
-        const values = [short_code, url_id];
-        const res = await pool.query(query, values);
-        return res.rows[0];
-    },
+  static async findByShortCode(shortCode) {
+    const query = `
+      SELECT url_id, short_code, long_url, user_id, click_count, created_at
+      FROM urls
+      WHERE short_code = $1
+    `;
+    const res = await pool.query(query, [shortCode]);
+    return res.rows[0] || null;
+  }
 
-    findByShortCode: async (short_code) => {
-        const query = `
-            SELECT * FROM urls WHERE short_code = $1
-        `;
-        const res = await pool.query(query, [short_code]);
-        return res.rows[0];
-    },
+  static async findByUserId(userId) {
+    const query = `
+      SELECT url_id, short_code, long_url, user_id, click_count, created_at
+      FROM urls
+      WHERE user_id = $1
+      ORDER BY created_at DESC
+    `;
+    const res = await pool.query(query, [userId]);
+    return res.rows;
+  }
 
-    findByUserId: async (user_id) => {
-        const query = `
-            SELECT * FROM urls WHERE user_id = $1
-        `;
-        const res = await pool.query(query, [user_id]);
-        return res.rows;
-    },
+  static async incrementClickCount(urlId) {
+    const query = `
+      UPDATE urls
+      SET click_count = click_count + 1
+      WHERE url_id = $1
+    `;
+    await pool.query(query, [urlId]);
+  }
 
-    deleteByShortCode: async (short_code) => {
-        const query = `
-            DELETE FROM urls WHERE short_code = $1
-            RETURNING *
-        `;
-        const res = await pool.query(query, [short_code]);
-        return res.rows[0];
-    },
-};
+  static async deleteById(urlId) {
+    const query = `
+      DELETE FROM urls
+      WHERE url_id = $1
+    `;
+    await pool.query(query, [urlId]);
+  }
+}
 
-module.exports = URL;
+module.exports = Url;
