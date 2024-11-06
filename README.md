@@ -30,7 +30,7 @@
 ## 📁 Project Structure
 
 ```sh
-└── synerry-test/
+└── Shorten-URL/
     ├── README.md
     ├── backend
     │   ├── .gitignore
@@ -67,7 +67,7 @@
 
 ### 📂 Project Index
 <details open>
-	<summary><b><code>SYNERRY-TEST/</code></b></summary>
+	<summary><b><code>Shorten-URL/</code></b></summary>
 	<details> <!-- backend Submodule -->
 		<summary><b>backend</b></summary>
 		<blockquote>
@@ -417,12 +417,12 @@ Install synerry-test following methods:
 
 1. Clone the synerry-test repository:
 ```sh
-❯ git clone https://github.com/OATZYH/synerry-test
+❯ git clone https://github.com/OATZYH/Shorten-URL.git
 ```
 
 2. Navigate to the project directory:
 ```sh
-❯ cd synerry-test
+❯ cd Shorten-URL
 ```
 
 3. Navigate to backend & frontend:
