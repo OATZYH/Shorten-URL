@@ -14,17 +14,20 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import RedirectIfAuth from "./components/RedirectIfAuth";
 import { Toaster } from "react-hot-toast";
 import RedirectPage from "./pages/RedirectPage";
+import UnauthorizedPage from "./pages/UnauthorizedPage";
+import AdminProtectedRoute from "./components/AdminProtectedRoute";
+import AdminPage from "./pages/AdminPage";
 
 const App: React.FC = () => {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <Toaster />
         <Routes>
           {/* Public Routes */}
           <Route element={<RedirectIfAuth />}>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Route>
 
           <Route element={<ProtectedRoute />}>
@@ -34,11 +37,19 @@ const App: React.FC = () => {
           {/* Default Route */}
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
 
+          {/* Admin Protected Routes */}
+          <Route element={<AdminProtectedRoute />}>
+            <Route path="/admin" element={<AdminPage />} />
+          </Route>
+
+          {/* Unauthorized and Not Found Routes */}
+          <Route path="/unauthorized" element={<UnauthorizedPage />} />
+
           {/* Redirect */}
           <Route path="/:short_code" element={<RedirectPage />} />
         </Routes>
-      </Router>
-    </AuthProvider>
+      </AuthProvider>
+    </Router>
   );
 };
 

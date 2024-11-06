@@ -1,5 +1,5 @@
 export interface User {
-  id: string;
+  user_id: string;
   username: string;
   is_admin: boolean;
 }
@@ -10,6 +10,7 @@ export interface URLShortened {
   long_url: string;
   click_count: number;
   created_at: string;
+  username: string;
 }
 
 export interface AuthContextType {

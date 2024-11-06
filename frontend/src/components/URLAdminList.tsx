@@ -1,15 +1,21 @@
-import React from "react";
 import { URLShortened } from "../types";
-import { ExternalLink, Copy, RotateCcw } from "lucide-react";
+import { ExternalLink, Copy, RotateCcw, Trash } from "lucide-react";
 import { toast } from "react-hot-toast";
+import axiosInstance from "../utils/apiConnect";
 
 interface URLListProps {
   urls: URLShortened[];
   onRefresh: () => void;
   loading: boolean;
+  onDelete: () => void;
 }
 
-export const URLList: React.FC<URLListProps> = ({ urls, onRefresh, loading }) => {
+export function URLAdminList({
+  urls,
+  onRefresh,
+  loading,
+  onDelete,
+}: URLListProps) {
   const shortUrlBase = import.meta.env.VITE_BASE_URL;
 
   function combineURL(short_code: string) {
@@ -22,6 +28,19 @@ export const URLList: React.FC<URLListProps> = ({ urls, onRefresh, loading }) =>
       toast.success("Copied to clipboard!");
     } catch (err) {
       toast.error("Failed to copy");
+    }
+  };
+
+  const handleDelete = async (url_id: string) => {
+    if (window.confirm("Are you sure you want to delete this URL?")) {
+      try {
+        await axiosInstance.delete(`/urls/${url_id}`);
+        toast.success("URL deleted successfully");
+      } catch (error) {
+        toast.error("Failed to delete URL");
+      } finally {
+        onDelete();
+      }
     }
   };
 
@@ -60,7 +79,10 @@ export const URLList: React.FC<URLListProps> = ({ urls, onRefresh, loading }) =>
                 {item.long_url}
               </h3>
               <span className="text-sm text-gray-500">
-                {new Date(item.created_at).toLocaleDateString()}
+                Created by : {item.username}
+                <span className="text-sm text-gray-500 ml-4">
+                  {new Date(item.created_at).toLocaleDateString()}
+                </span>
               </span>
             </div>
             <div className="flex items-center justify-between">
@@ -86,6 +108,14 @@ export const URLList: React.FC<URLListProps> = ({ urls, onRefresh, loading }) =>
                     <ExternalLink className="h-4 w-4 text-gray-500" />
                   </button>
                 </div>
+                <div className="tooltip" data-tip="Delete">
+                  <button
+                    className="btn btn-circle btn-sm btn-error"
+                    onClick={() => handleDelete(item.url_id)}
+                  >
+                    <Trash className="h-4 w-4 " />
+                  </button>
+                </div>
               </div>
               <span className="text-sm text-gray-500">
                 {item.click_count} clicks
@@ -96,4 +126,4 @@ export const URLList: React.FC<URLListProps> = ({ urls, onRefresh, loading }) =>
       </div>
     </div>
   );
-};
+}

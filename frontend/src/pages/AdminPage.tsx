@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { URLShortener } from "../components/URLShortener";
-import { URLList } from "../components/URLList";
 import { Link2, LogOut } from "lucide-react";
 import { URLShortened } from "../types";
 import axiosInstance from '../utils/apiConnect';
+import { URLAdminList } from "../components/URLAdminList";
 
-const Dashboard: React.FC = () => {
+const AdminPage: React.FC = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [urls, setUrls] = useState<URLShortened[]>([]);
@@ -27,9 +27,9 @@ const Dashboard: React.FC = () => {
   const fetchURLs = async () => {
     setLoading(true);
     try {
-      const response = await axiosInstance.get('/urls/my-urls');
+      const response = await axiosInstance.get('/urls/allurls');
       setUrls(response.data);
-      // console.log("URLs fetched", response.data);
+      console.log("URLs fetched", response.data);
     } catch (error) {
       console.error("Failed to fetch URLs", error);
     } finally {
@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
           <div className="flex items-center space-x-2">
             <Link2 className="h-6 w-6 text-blue-600" />
             <span className="font-semibold text-xl text-gray-900">
-              URL Shortener
+              URL Shortener Admin
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -68,11 +68,11 @@ const Dashboard: React.FC = () => {
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-8">
           <URLShortener onURLShortened={fetchURLs} />
-          <URLList urls={urls} onRefresh={fetchURLs} loading={loading}/>
+          <URLAdminList urls={urls} loading={loading} onRefresh={fetchURLs} onDelete={fetchURLs}/>
         </div>
       </main>
     </div>
   );
 };
 
-export default Dashboard;
+export default AdminPage;

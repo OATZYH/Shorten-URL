@@ -1,5 +1,5 @@
-const pool = require('../config/db');
-const { generateRandomString } = require('../utils/encoding'); 
+const pool = require("../config/db");
+const { generateRandomString } = require("../utils/encoding");
 
 class URL {
   static async create(longUrl, userId) {
@@ -60,36 +60,27 @@ class URL {
     await pool.query(query, [urlId]);
   }
 
-  // --- Click Methods ---
-
-  static async recordClick(urlId) {
+  static async findByUrlId(urlId) {
     const query = `
-      INSERT INTO url_clicks (url_id)
-      VALUES ($1)
-      RETURNING click_id, url_id, clicked_at
-    `;
-    const values = [urlId];
-    const res = await pool.query(query, values);
-    return res.rows[0];
-  }
-
-  static async getClicksByUrlId(urlId) {
-    const query = `
-      SELECT click_id, url_id, clicked_at
-      FROM url_clicks
+      SELECT url_id, short_code, long_url, user_id, click_count, created_at
+      FROM urls
       WHERE url_id = $1
-      ORDER BY clicked_at DESC
     `;
     const res = await pool.query(query, [urlId]);
-    return res.rows;
+    return res.rows[0] || null;
   }
 
-  static async deleteClicksByUrlId(urlId) {
+  static async getAllURL() {
     const query = `
-      DELETE FROM url_clicks
-      WHERE url_id = $1
+      SELECT 
+      u.url_id, u.short_code, u.long_url, u.user_id, u.click_count, u.created_at, 
+      usr.username
+    FROM urls u
+    JOIN users usr ON u.user_id = usr.user_id
+    ORDER BY u.created_at DESC
     `;
-    await pool.query(query, [urlId]);
+    const res = await pool.query(query);
+    return res.rows;
   }
 }
 

@@ -9,7 +9,6 @@ function generateRandomString(length = 10) {
     const randomIndex = crypto.randomInt(0, BASE62.length);
     randomString += BASE62[randomIndex];
   }
-
   return randomString;
 }
 

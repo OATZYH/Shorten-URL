@@ -72,22 +72,39 @@ exports.getUserURLs = async (req, res) => {
 
 // Delete a URL (Admin or Owner)
 exports.deleteURL = async (req, res) => {
-    const { short_code } = req.params;
+    const { url_id } = req.params;
     const user = req.user;
 
     try {
-        const urlRecord = await URL.findByShortCode(short_code);
+        const urlRecord = await URL.findByUrlId(url_id);
         if (!urlRecord) {
             return res.status(404).json({ msg: 'URL not found' });
         }
 
         // Check if the user is admin or the owner of the URL
         if (user.is_admin || urlRecord.user_id === user.user_id) {
-            await URL.deleteByShortCode(short_code);
+            await URL.deleteById(url_id);
             return res.json({ msg: 'URL deleted successfully' });
         } else {
             return res.status(403).json({ msg: 'Unauthorized' });
         }
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+};
+
+// Get All URLs (Admin Only)
+exports.getAllURL = async (req, res) => {
+    const user = req.user;
+
+    if (!user.is_admin) {
+        return res.status(403).json({ msg: 'Unauthorized' });
+    }
+
+    try {
+        const urls = await URL.getAllURL();
+        res.json(urls);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');

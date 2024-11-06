@@ -4,6 +4,8 @@ import { User, AuthContextType } from '../types';
 import { toast } from 'react-hot-toast';
 import axiosInstance from '../utils/apiConnect';
 import axios, { AxiosError } from 'axios';
+import {jwtDecode} from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
@@ -18,28 +20,33 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   // Fetch current user on mount if token exists
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axiosInstance
-        .get('/auth/user', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((res) => {
-          setUser(res.data.user);
-        })
-        .catch((err) => {
-          console.error(err);
-          setUser(null);
+      try {
+        // Decode token to get user info
+        const decoded = jwtDecode<User & { exp: number }>(token);
+        // Check if token is expired
+        if (decoded.exp * 1000 < Date.now()) {
           localStorage.removeItem('token');
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+          setUser(null);
+        } else {
+          setUser({
+            user_id: decoded.user_id,
+            username: decoded.username,
+            is_admin: decoded.is_admin,
+          });
+        }
+      } catch (err) {
+        console.error('Token decoding error:', err);
+        localStorage.removeItem('token');
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
     } else {
       setLoading(false);
     }
@@ -49,10 +56,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (username: string, password: string) => {
     try {
       const res = await axiosInstance.post('/auth/login', { username, password });
-      const { token, user } = res.data;
+      const { token } = res.data;
       localStorage.setItem('token', token);
-      setUser(user);
+
+      const decoded = jwtDecode<User & { exp: number }>(token);
+      setUser({
+        user_id: decoded.user_id,
+        username: decoded.username,
+        is_admin: decoded.is_admin,
+      });
+      
       toast.success('Logged in successfully');
+      if (decoded.is_admin) {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const err = error as AxiosError<{ message: string }>;
@@ -68,9 +87,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = async (username: string, password: string) => {
     try {
       const res = await axiosInstance.post('/auth/register', { username, password });
-      const { token, user } = res.data;
+      const { token } = res.data;
       localStorage.setItem('token', token);
-      setUser(user);
+
+      const decoded = jwtDecode<User & { exp: number }>(token);
+      setUser({
+        user_id: decoded.user_id,
+        username: decoded.username,
+        is_admin: decoded.is_admin,
+      });
+
+      toast.success('Registered successfully');
+
+      if (decoded.is_admin) {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
       toast.success('Registered successfully');
     } catch (error) {
       if (axios.isAxiosError(error)) {

@@ -18,6 +18,11 @@ const LoginPage: React.FC = () => {
           <p>Username: Sarun</p>
           <p>Password: Sarun_password</p>
         </div>
+        <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-md">
+          <p className="font-medium">Admin Credentials:</p>
+          <p>Username: Admin</p>
+          <p>Password: Admin_password</p>
+        </div>
         <AuthForm type="login" onSuccess={handleSuccess} />
         <div className="mt-4 text-center">
           <button
