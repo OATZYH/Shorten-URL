@@ -1,5 +1,5 @@
 const pool = require("../config/db");
-const { generateRandomString } = require("../utils/encoding");
+const { generateShortCode  } = require("../utils/encoding");
 
 class URL {
   static async create(longUrl, userId) {
@@ -9,7 +9,7 @@ class URL {
     const url_id = idRes.rows[0].id;
 
     // Generate short_code using Base62 encoding of url_id
-    const shortCode = generateRandomString(url_id);
+    const shortCode = generateShortCode (url_id);
 
     // Insert the record with url_id and short_code
     const query = `
