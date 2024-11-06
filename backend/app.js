@@ -40,9 +40,9 @@ const usersRouter = require('./routes/users');
 const urlRoutes = require('./routes/url');
 
 app.use('/', indexRouter);
-app.use('/auth', authRoutes);
-app.use('/auth/user', usersRouter);
-app.use('/api', urlRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/auth/user', usersRouter);
+app.use('/api/urls', urlRoutes);
 
 // Error Handling
 app.use(function (req, res, next) {

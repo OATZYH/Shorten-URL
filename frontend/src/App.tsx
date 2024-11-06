@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import RedirectIfAuth from './components/RedirectIfAuth';
 import { Toaster } from 'react-hot-toast';
+import RedirectPage from './pages/RedirectPage';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,9 @@ const App: React.FC = () => {
 
           {/* Default Route */}
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
+
+          {/* Redirect */}
+          <Route path="/:short_code" element={<RedirectPage />} />
         </Routes>
       </Router>
     </AuthProvider>
