@@ -11,7 +11,7 @@ const ProtectedRoute: React.FC = () => {
   }
 
   if (user.is_admin) {
-    return <Navigate to="/unauthorized" />;
+    return <Navigate to="/admin" />;
   }
 
   return <Outlet />;
