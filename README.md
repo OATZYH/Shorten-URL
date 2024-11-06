@@ -417,12 +417,12 @@ Install synerry-test following methods:
 
 1. Clone the synerry-test repository:
 ```sh
-❯ git clone https://github.com/OATZYH/synerry-test
+❯ git clone https://github.com/OATZYH/Shorten-URL.git
 ```
 
 2. Navigate to the project directory:
 ```sh
-❯ cd synerry-test
+❯ cd Shorten-URL
 ```
 
 3. Navigate to backend & frontend:
