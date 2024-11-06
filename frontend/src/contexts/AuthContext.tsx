@@ -93,7 +93,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <p className="text-xl font-semibold">Loading...</p>
+        <span className="loading loading-spinner loading-md"></span>
       </div>
     ) 
   }

@@ -6,7 +6,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSuccess = () => {
-    navigate("/dashboard");
+    navigate("/dashboard", { state: { isFetching: true } });
   };
 
   return (

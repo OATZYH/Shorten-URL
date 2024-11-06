@@ -5,11 +5,11 @@ export interface User {
 }
 
 export interface URLShortened {
-  id: string;
-  originalUrl: string;
-  shortUrl: string;
-  clicks: number;
-  createdAt: string;
+  url_id: string;
+  short_code: string;
+  long_url: string;
+  click_count: number;
+  created_at: string;
 }
 
 export interface AuthContextType {
