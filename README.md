@@ -30,7 +30,7 @@
 ## 📁 Project Structure
 
 ```sh
-└── synerry-test/
+└── Shorten-URL/
     ├── README.md
     ├── backend
     │   ├── .gitignore
@@ -67,7 +67,7 @@
 
 ### 📂 Project Index
 <details open>
-	<summary><b><code>SYNERRY-TEST/</code></b></summary>
+	<summary><b><code>Shorten-URL/</code></b></summary>
 	<details> <!-- backend Submodule -->
 		<summary><b>backend</b></summary>
 		<blockquote>
