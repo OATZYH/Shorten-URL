@@ -75,7 +75,7 @@ export function URLAdminList({
   }
 
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col space-y-4 px-4 sm:px-6 md:px-8">
       <div className="self-end">
         <button className="btn btn-sm" onClick={onRefresh}>
           Refresh
@@ -90,56 +90,44 @@ export function URLAdminList({
               key={item.url_id}
               className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow"
             >
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-medium text-gray-900 truncate max-w-[70%]">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                <h3 className="font-medium text-gray-900 truncate max-w-full sm:max-w-[70%]">
                   {item.long_url}
                 </h3>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-gray-500 mt-2 sm:mt-0">
                   Created by : {item.username}
-                  <span className="text-sm text-gray-500 ml-4">
-                    {new Date(item.created_at).toLocaleDateString()}
-                  </span>
+                  <span className="ml-4">{new Date(item.created_at).toLocaleDateString()}</span>
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <span className="text-blue-600 font-medium">{shortUrl}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center flex-wrap sm:space-x-2 mt-2 sm:mt-0">
+                  <a href={shortUrl} target="_blank" className="text-blue-600 font-medium truncate">{shortUrl}</a>
+                  <div className="flex items-center flex-wrap space-x-4 mt-4 sm:mt-0">
+
+                  
                   <div className="tooltip" data-tip="Copy to clipboard">
-                    <button
-                      onClick={() => copyToClipboard(shortUrl)}
-                      className="btn btn-circle btn-sm"
-                    >
+                    <button onClick={() => copyToClipboard(shortUrl)} className="btn btn-circle btn-sm">
                       <Copy className="h-4 w-4 text-gray-500" />
                     </button>
                   </div>
                   <div className="tooltip" data-tip="Open short link">
-                    <button
-                      className="btn btn-circle btn-sm"
-                      onClick={() => {
-                        window.open(shortUrl, "_blank");
-                      }}
-                    >
+                    <button className="btn btn-circle btn-sm" onClick={() => window.open(shortUrl, "_blank")}>
                       <ExternalLink className="h-4 w-4 text-gray-500" />
                     </button>
                   </div>
                   <div className="tooltip" data-tip="QR code">
-                    <button
-                      className="btn btn-circle btn-sm"
-                      onClick={() => openModal(shortUrl)}
-                    >
+                    <button className="btn btn-circle btn-sm" onClick={() => openModal(shortUrl)}>
                       <QrCode className="h-5 w-5 text-gray-500" />
                     </button>
                   </div>
                   <div className="tooltip" data-tip="Delete">
-                    <button
-                      className="btn btn-circle btn-sm btn-error"
-                      onClick={() => handleDelete(item.url_id)}
-                    >
-                      <Trash className="h-4 w-4 " />
+                    <button className="btn btn-circle btn-sm btn-error" onClick={() => handleDelete(item.url_id)}>
+                      <Trash className="h-4 w-4" />
                     </button>
                   </div>
+                  </div>
                 </div>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm self-end text-gray-500 mt-2 sm:mt-0">
                   {item.click_count} clicks
                 </span>
               </div>
