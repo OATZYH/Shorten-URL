@@ -10,8 +10,8 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="md:min-w-96 p-6 bg-white rounded-lg shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 md:px-8">
+      <div className="w-full md:max-w-96 p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold mb-4">Register</h2>
         <AuthForm type="register" onSuccess={handleSuccess} />
         <div className="mt-4 text-center">

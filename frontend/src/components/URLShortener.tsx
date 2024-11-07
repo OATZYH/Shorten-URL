@@ -29,7 +29,7 @@ export const URLShortener: React.FC<URLShortenerProps> = ({ onURLShortened }) =>
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full">
+    <form onSubmit={handleSubmit} className="w-full px-4 sm:px-6 md:px-8">
       <div className="flex gap-2">
         <div className="relative flex-1">
           <Link2 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
