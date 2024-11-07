@@ -73,15 +73,15 @@
 		<blockquote>
 			<table>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/app.js'>app.js</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/app.js'>app.js</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/package-lock.json'>package-lock.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/package-lock.json'>package-lock.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/package.json'>package.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/package.json'>package.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			</table>
@@ -90,11 +90,11 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/config/passport.js'>passport.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/config/passport.js'>passport.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/config/db.js'>db.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/config/db.js'>db.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -105,11 +105,11 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/controllers/authController.js'>authController.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/controllers/authController.js'>authController.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/controllers/urlController.js'>urlController.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/controllers/urlController.js'>urlController.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -120,7 +120,7 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/bin/www'>www</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/bin/www'>www</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -131,11 +131,11 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/models/URL.js'>URL.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/models/URL.js'>URL.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/models/User.js'>User.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/models/User.js'>User.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -146,15 +146,15 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/views/error.jade'>error.jade</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/views/error.jade'>error.jade</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/views/layout.jade'>layout.jade</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/views/layout.jade'>layout.jade</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/views/index.jade'>index.jade</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/views/index.jade'>index.jade</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -165,19 +165,19 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/routes/url.js'>url.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/routes/url.js'>url.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/routes/index.js'>index.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/routes/index.js'>index.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/routes/auth.js'>auth.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/routes/auth.js'>auth.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/routes/users.js'>users.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/routes/users.js'>users.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -188,7 +188,7 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/utils/encoding.js'>encoding.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/utils/encoding.js'>encoding.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -202,7 +202,7 @@
 						<blockquote>
 							<table>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/public/stylesheets/style.css'>style.css</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/public/stylesheets/style.css'>style.css</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							</table>
@@ -215,7 +215,7 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/backend/middleware/authMiddleware.js'>authMiddleware.js</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/backend/middleware/authMiddleware.js'>authMiddleware.js</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -228,43 +228,43 @@
 		<blockquote>
 			<table>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/postcss.config.js'>postcss.config.js</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/postcss.config.js'>postcss.config.js</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/tsconfig.node.json'>tsconfig.node.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/tsconfig.node.json'>tsconfig.node.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/package-lock.json'>package-lock.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/package-lock.json'>package-lock.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/tsconfig.json'>tsconfig.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/tsconfig.json'>tsconfig.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/tailwind.config.js'>tailwind.config.js</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/tailwind.config.js'>tailwind.config.js</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/tsconfig.app.json'>tsconfig.app.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/tsconfig.app.json'>tsconfig.app.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/package.json'>package.json</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/package.json'>package.json</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/vite.config.ts'>vite.config.ts</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/vite.config.ts'>vite.config.ts</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/index.html'>index.html</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/index.html'>index.html</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			<tr>
-				<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/eslint.config.js'>eslint.config.js</a></b></td>
+				<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/eslint.config.js'>eslint.config.js</a></b></td>
 				<td><code>❯ REPLACE-ME</code></td>
 			</tr>
 			</table>
@@ -273,23 +273,23 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/types.ts'>types.ts</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/types.ts'>types.ts</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/main.tsx'>main.tsx</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/main.tsx'>main.tsx</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/index.css'>index.css</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/index.css'>index.css</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/App.tsx'>App.tsx</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/App.tsx'>App.tsx</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/vite-env.d.ts'>vite-env.d.ts</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/vite-env.d.ts'>vite-env.d.ts</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -298,7 +298,7 @@
 						<blockquote>
 							<table>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/contexts/AuthContext.tsx'>AuthContext.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/contexts/AuthContext.tsx'>AuthContext.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							</table>
@@ -309,31 +309,31 @@
 						<blockquote>
 							<table>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/AdminProtectedRoute.tsx'>AdminProtectedRoute.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/AdminProtectedRoute.tsx'>AdminProtectedRoute.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/URLShortener.tsx'>URLShortener.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/URLShortener.tsx'>URLShortener.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/URLAdminList.tsx'>URLAdminList.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/URLAdminList.tsx'>URLAdminList.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/RedirectIfAuth.tsx'>RedirectIfAuth.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/RedirectIfAuth.tsx'>RedirectIfAuth.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/ProtectedRoute.tsx'>ProtectedRoute.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/ProtectedRoute.tsx'>ProtectedRoute.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/AuthForm.tsx'>AuthForm.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/AuthForm.tsx'>AuthForm.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/components/URLList.tsx'>URLList.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/components/URLList.tsx'>URLList.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							</table>
@@ -344,27 +344,27 @@
 						<blockquote>
 							<table>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/LoginPage.tsx'>LoginPage.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/LoginPage.tsx'>LoginPage.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/RedirectPage.tsx'>RedirectPage.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/RedirectPage.tsx'>RedirectPage.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/AdminPage.tsx'>AdminPage.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/AdminPage.tsx'>AdminPage.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/RegisterPage.tsx'>RegisterPage.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/RegisterPage.tsx'>RegisterPage.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/Dashboard.tsx'>Dashboard.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/Dashboard.tsx'>Dashboard.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/pages/UnauthorizedPage.tsx'>UnauthorizedPage.tsx</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/pages/UnauthorizedPage.tsx'>UnauthorizedPage.tsx</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							</table>
@@ -375,7 +375,7 @@
 						<blockquote>
 							<table>
 							<tr>
-								<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/src/utils/apiConnect.ts'>apiConnect.ts</a></b></td>
+								<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/src/utils/apiConnect.ts'>apiConnect.ts</a></b></td>
 								<td><code>❯ REPLACE-ME</code></td>
 							</tr>
 							</table>
@@ -388,7 +388,7 @@
 				<blockquote>
 					<table>
 					<tr>
-						<td><b><a href='https://github.com/OATZYH/synerry-test/blob/master/frontend/public/_redirects'>_redirects</a></b></td>
+						<td><b><a href='https://github.com/OATZYH/Shorten-URL/blob/master/frontend/public/_redirects'>_redirects</a></b></td>
 						<td><code>❯ REPLACE-ME</code></td>
 					</tr>
 					</table>
@@ -403,7 +403,7 @@
 
 ### ☑️ Prerequisites
 
-Before getting started with synerry-test, ensure your runtime environment meets the following requirements:
+Before getting started with Shorten-URL, ensure your runtime environment meets the following requirements:
 
 - **Programming Language:** JavaScript & TypeScript
 - **Package Manager:** Npm
@@ -411,11 +411,11 @@ Before getting started with synerry-test, ensure your runtime environment meets 
 
 ### ⚙️ Installation
 
-Install synerry-test following methods:
+Install Shorten-URL following methods:
 
 **Build from source:**
 
-1. Clone the synerry-test repository:
+1. Clone the Shorten-URL repository:
 ```sh
 ❯ git clone https://github.com/OATZYH/Shorten-URL.git
 ```
@@ -440,7 +440,7 @@ Install synerry-test following methods:
 ```
 
 ### 🤖 Usage
-Run synerry-test using the following command:
+Run Shorten-URL using the following command:
 
 **`backend`**
 ```sh
